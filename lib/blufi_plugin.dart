@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/services.dart';
@@ -6,16 +5,17 @@ import 'package:flutter/services.dart';
 typedef ResultCallback = void Function(String data);
 
 class BlufiPlugin {
-  final MethodChannel _channel =
-      const MethodChannel('blufi_plugin');
-  final EventChannel _eventChannel =  EventChannel('blufi_plugin/state');
+  final MethodChannel _channel = const MethodChannel('blufi_plugin');
+  final EventChannel _eventChannel = EventChannel('blufi_plugin/state');
 
   BlufiPlugin._() {
     _channel.setMethodCallHandler((MethodCall call) {
       return;
     });
 
-    _eventChannel.receiveBroadcastStream().listen(speechResultsHandler, onError: speechResultErrorHandler);
+    _eventChannel
+        .receiveBroadcastStream()
+        .listen(speechResultsHandler, onError: speechResultErrorHandler);
   }
 
   ResultCallback _resultSuccessCallback;
@@ -24,7 +24,8 @@ class BlufiPlugin {
   static BlufiPlugin _instance = new BlufiPlugin._();
   static BlufiPlugin get instance => _instance;
 
-  void onMessageReceived({ResultCallback successCallback, ResultCallback errorCallback}) {
+  void onMessageReceived(
+      {ResultCallback successCallback, ResultCallback errorCallback}) {
     _resultSuccessCallback = successCallback;
     _resultErrorCallback = errorCallback;
   }
@@ -35,7 +36,8 @@ class BlufiPlugin {
   }
 
   Future scanDeviceInfo({String filterString}) async {
-    await _channel.invokeMapMethod('scanDeviceInfo', <String, dynamic>{'filter': filterString});
+    await _channel.invokeMapMethod(
+        'scanDeviceInfo', <String, dynamic>{'filter': filterString});
   }
 
   Future stopScan() async {
@@ -43,7 +45,8 @@ class BlufiPlugin {
   }
 
   Future connectPeripheral({String peripheralAddress}) async {
-    await _channel.invokeMapMethod('connectPeripheral', <String, dynamic>{'peripheral':peripheralAddress});
+    await _channel.invokeMapMethod('connectPeripheral',
+        <String, dynamic>{'peripheral': peripheralAddress});
   }
 
   Future requestCloseConnection() async {
@@ -59,7 +62,8 @@ class BlufiPlugin {
   }
 
   Future configProvision({String username, String password}) async {
-    await _channel.invokeMapMethod('configProvision', <String, dynamic>{'username':username, 'password': password});
+    await _channel.invokeMapMethod('configProvision',
+        <String, dynamic>{'username': username, 'password': password});
   }
 
   Future requestDeviceStatus() async {
@@ -69,19 +73,17 @@ class BlufiPlugin {
   Future requestDeviceScan() async {
     await _channel.invokeMapMethod('requestDeviceScan');
   }
-  
+
   Future postCustomData(String dataStr) async {
-    await _channel.invokeMapMethod('postCustomData', <String, dynamic>{'custom_data':dataStr});
+    await _channel.invokeMapMethod(
+        'postCustomData', <String, dynamic>{'custom_data': dataStr});
   }
 
   speechResultsHandler(dynamic event) {
-    if (_resultSuccessCallback != null)
-    _resultSuccessCallback(event);
+    if (_resultSuccessCallback != null) _resultSuccessCallback(event);
   }
 
   speechResultErrorHandler(dynamic error) {
-    if (_resultErrorCallback != null)
-    _resultErrorCallback(error);
+    if (_resultErrorCallback != null) _resultErrorCallback(error);
   }
-
 }

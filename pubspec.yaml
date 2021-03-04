@@ -1,9 +1,9 @@
 name: blufi_plugin
-description: A new Flutter plugin.
-version: 0.0.1
-author:
-homepage:
-
+description: EspBlufi plugin, use two library EspBlufiForiOS, EspBlufiForAndroid.
+version: 0.0.3
+homepage: https://github.com/lengockhoa90/FlutterBlufi
+repository: https://github.com/lengockhoa90/FlutterBlufi.git
+issue_tracker: https://github.com/lengockhoa90/FlutterBlufi/issues
 environment:
   sdk: ">=2.7.0 <3.0.0"
   flutter: ">=1.20.0"
