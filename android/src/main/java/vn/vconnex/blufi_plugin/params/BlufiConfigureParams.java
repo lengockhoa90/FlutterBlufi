@@ -1,4 +1,4 @@
-package blufi.espressif.params;
+package vn.vconnex.blufi_plugin.params;
 
 import java.io.Serializable;
 import java.util.Locale;

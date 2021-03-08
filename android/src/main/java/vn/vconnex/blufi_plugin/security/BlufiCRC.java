@@ -1,4 +1,4 @@
-package blufi.espressif.security;
+package vn.vconnex.blufi_plugin.security;
 
 public class BlufiCRC {
     private static final int[] CRC_TB = {

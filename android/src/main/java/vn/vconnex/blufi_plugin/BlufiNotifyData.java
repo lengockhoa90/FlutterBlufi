@@ -1,8 +1,8 @@
-package blufi.espressif;
+package vn.vconnex.blufi_plugin;
 
 import java.io.ByteArrayOutputStream;
 
-class BlufiNotifyData {
+public class BlufiNotifyData {
     private int mTypeValue;
     private int mPkgType;
     private int mSubType;
@@ -19,23 +19,23 @@ class BlufiNotifyData {
         return mTypeValue;
     }
 
-    void setType(int typeValue) {
+    public void setType(int typeValue) {
         mTypeValue = typeValue;
     }
 
-    int getPkgType() {
+    public int getPkgType() {
         return mPkgType;
     }
 
-    void setPkgType(int pkgType) {
+    public void setPkgType(int pkgType) {
         mPkgType = pkgType;
     }
 
-    int getSubType() {
+    public int getSubType() {
         return mSubType;
     }
 
-    void setSubType(int subType) {
+    public void setSubType(int subType) {
         mSubType = subType;
     }
 
@@ -43,15 +43,15 @@ class BlufiNotifyData {
         return mFrameCtrlValue;
     }
 
-    void setFrameCtrl(int frameCtrl) {
+    public void setFrameCtrl(int frameCtrl) {
         mFrameCtrlValue = frameCtrl;
     }
 
-    void addData(byte[] bytes, int offset) {
+    public void addData(byte[] bytes, int offset) {
         mDataOS.write(bytes, offset, bytes.length - offset);
     }
 
-    byte[] getDataArray() {
+    public byte[] getDataArray() {
         return mDataOS.toByteArray();
     }
 }

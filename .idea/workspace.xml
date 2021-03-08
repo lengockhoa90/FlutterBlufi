@@ -5,12 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4233614-2244-477f-9efb-facfedc95fc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/blufi_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blufi_plugin.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FlutterBlufi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlutterBlufi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/constants/BlufiConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/constants/BlufiConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/BlufiCallback.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/BlufiClient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/BlufiClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/BlufiNotifyData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/FrameCtrlData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/params/BlufiConfigureParams.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/params/BlufiParameter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/response/BlufiScanResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/response/BlufiStatusResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/response/BlufiVersionResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/security/BlufiAES.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/security/BlufiCRC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/security/BlufiDH.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/blufilibrary/src/main/java/blufi/espressif/security/BlufiMD5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +75,25 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1831" height="605" key="GridCell.Tab.0.bottom" timestamp="1614854814682">
+    <state width="1831" height="213" key="GridCell.Tab.0.bottom" timestamp="1615169729479">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="605" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1614854814682" />
-    <state width="1831" height="605" key="GridCell.Tab.0.center" timestamp="1614854814681">
+    <state width="1831" height="213" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169729479" />
+    <state width="1831" height="213" key="GridCell.Tab.0.center" timestamp="1615169729477">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="605" key="GridCell.Tab.0.center/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1614854814681" />
-    <state width="1831" height="605" key="GridCell.Tab.0.left" timestamp="1614854814680">
+    <state width="1831" height="213" key="GridCell.Tab.0.center/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169729477" />
+    <state width="1831" height="213" key="GridCell.Tab.0.left" timestamp="1615169729475">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="605" key="GridCell.Tab.0.left/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1614854814680" />
-    <state width="1831" height="605" key="GridCell.Tab.0.right" timestamp="1614854814681">
+    <state width="1831" height="213" key="GridCell.Tab.0.left/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169729475" />
+    <state width="1831" height="213" key="GridCell.Tab.0.right" timestamp="1615169729478">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="605" key="GridCell.Tab.0.right/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1614854814681" />
+    <state width="1831" height="213" key="GridCell.Tab.0.right/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169729478" />
+    <state x="1909" y="306" width="865" height="490" key="find.popup" timestamp="1615169537233">
+      <screen x="1280" y="23" width="1873" height="1057" />
+    </state>
+    <state x="1909" y="306" width="865" height="490" key="find.popup/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169537233" />
   </component>
 </project>

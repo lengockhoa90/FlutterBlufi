@@ -1,4 +1,4 @@
-package blufi.espressif;
+package vn.vconnex.blufi_plugin;
 
 import android.annotation.TargetApi;
 import android.bluetooth.BluetoothDevice;
@@ -31,17 +31,18 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import javax.crypto.interfaces.DHPublicKey;
 
-import blufi.espressif.params.BlufiConfigureParams;
-import blufi.espressif.params.BlufiParameter;
-import blufi.espressif.response.BlufiScanResult;
-import blufi.espressif.response.BlufiStatusResponse;
-import blufi.espressif.response.BlufiVersionResponse;
-import blufi.espressif.security.BlufiAES;
-import blufi.espressif.security.BlufiCRC;
-import blufi.espressif.security.BlufiDH;
-import blufi.espressif.security.BlufiMD5;
+import vn.vconnex.blufi_plugin.params.BlufiConfigureParams;
+import vn.vconnex.blufi_plugin.params.BlufiParameter;
+import vn.vconnex.blufi_plugin.response.BlufiScanResult;
+import vn.vconnex.blufi_plugin.response.BlufiStatusResponse;
+import vn.vconnex.blufi_plugin.response.BlufiVersionResponse;
+import vn.vconnex.blufi_plugin.security.BlufiAES;
+import vn.vconnex.blufi_plugin.security.BlufiCRC;
+import vn.vconnex.blufi_plugin.security.BlufiDH;
+import vn.vconnex.blufi_plugin.security.BlufiMD5;
 
-class BlufiClientImpl implements BlufiParameter {
+
+public class BlufiClientImpl implements BlufiParameter {
     private static final String TAG = "BlufiClientImpl";
     private static final boolean DEBUG = BuildConfig.DEBUG;
 
@@ -97,7 +98,7 @@ class BlufiClientImpl implements BlufiParameter {
 
     private int mConnectState = BluetoothGatt.STATE_DISCONNECTED;
 
-    BlufiClientImpl(BlufiClient client, Context context, BluetoothDevice device) {
+    public BlufiClientImpl(BlufiClient client, Context context, BluetoothDevice device) {
         mClient = client;
         mContext = context;
         mDevice = device;
@@ -117,11 +118,11 @@ class BlufiClientImpl implements BlufiParameter {
         mWriteResultQueue = new LinkedBlockingQueue<>();
     }
 
-    void setGattCallback(BluetoothGattCallback callback) {
+    public void setGattCallback(BluetoothGattCallback callback) {
         mUserGattCallback = callback;
     }
 
-    void setBlufiCallback(BlufiCallback callback) {
+    public void setBlufiCallback(BlufiCallback callback) {
         mUserBlufiCallback = callback;
     }
 
@@ -674,9 +675,12 @@ class BlufiClientImpl implements BlufiParameter {
     }
 
     private void onError(final int errCode) {
-        mUIHandler.post(() -> {
-            if (mUserBlufiCallback != null) {
-                mUserBlufiCallback.onError(mClient, errCode);
+        mUIHandler.post(new Runnable() {
+            @Override
+            public void run() {
+                if (mUserBlufiCallback != null) {
+                    mUserBlufiCallback.onError(mClient, errCode);
+                }
             }
         });
     }

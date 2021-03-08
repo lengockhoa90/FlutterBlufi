@@ -1,4 +1,4 @@
-package blufi.espressif.security;
+package vn.vconnex.blufi_plugin.security;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,4 +1,4 @@
-package blufi.espressif;
+package vn.vconnex.blufi_plugin;
 
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothGattCallback;
@@ -6,9 +6,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import blufi.espressif.params.BlufiConfigureParams;
-import blufi.espressif.response.BlufiStatusResponse;
-import blufi.espressif.response.BlufiVersionResponse;
+import vn.vconnex.blufi_plugin.BlufiClientImpl;
+import vn.vconnex.blufi_plugin.params.BlufiConfigureParams;
 
 public class BlufiClient {
 //    public static final String VERSION = BuildConfig.VERSION_NAME;
@@ -77,7 +76,7 @@ public class BlufiClient {
 
     /**
      * Request to get device version. The result will notified in
-     * {@link BlufiCallback#onDeviceVersionResponse(BlufiClient, int, BlufiVersionResponse)}
+     *
      */
     public void requestDeviceVersion() {
         mImpl.requestDeviceVersion();
@@ -85,7 +84,7 @@ public class BlufiClient {
 
     /**
      * Request to get device current status. The result will be notified in
-     * {@link BlufiCallback#onDeviceStatusResponse(BlufiClient, int, BlufiStatusResponse)}
+     *
      */
     public void requestDeviceStatus() {
         mImpl.requestDeviceStatus();

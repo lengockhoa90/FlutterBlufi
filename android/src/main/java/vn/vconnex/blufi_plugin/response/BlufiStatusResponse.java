@@ -1,6 +1,7 @@
-package blufi.espressif.response;
+package vn.vconnex.blufi_plugin.response;
 
-import blufi.espressif.params.BlufiParameter;
+
+import vn.vconnex.blufi_plugin.params.BlufiParameter;
 
 public class BlufiStatusResponse {
     private int mOpMode = -1;

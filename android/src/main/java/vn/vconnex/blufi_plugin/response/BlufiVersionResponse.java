@@ -1,4 +1,4 @@
-package blufi.espressif.response;
+package vn.vconnex.blufi_plugin.response;
 
 import java.util.Locale;
 

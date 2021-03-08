@@ -1,8 +1,8 @@
-package blufi.espressif;
+package vn.vconnex.blufi_plugin;
 
-import blufi.espressif.params.BlufiParameter;
+import vn.vconnex.blufi_plugin.params.BlufiParameter;
 
-class FrameCtrlData {
+public class FrameCtrlData {
     private static final int FRAME_CTRL_POSITION_ENCRYPTED = 0;
     private static final int FRAME_CTRL_POSITION_CHECKSUM = 1;
     private static final int FRAME_CTRL_POSITION_DATA_DIRECTION = 2;
@@ -11,7 +11,7 @@ class FrameCtrlData {
 
     private final int mValue;
 
-    FrameCtrlData(int frameCtrlValue) {
+    public FrameCtrlData(int frameCtrlValue) {
         mValue = frameCtrlValue;
     }
 
@@ -19,11 +19,11 @@ class FrameCtrlData {
         return ((mValue >> position) & 1) == 1;
     }
 
-    boolean isEncrypted() {
+    public boolean isEncrypted() {
         return check(FRAME_CTRL_POSITION_ENCRYPTED);
     }
 
-    boolean isChecksum() {
+    public boolean isChecksum() {
         return check(FRAME_CTRL_POSITION_CHECKSUM);
     }
 
@@ -31,11 +31,11 @@ class FrameCtrlData {
         return check(FRAME_CTRL_POSITION_REQUIRE_ACK);
     }
 
-    boolean hasFrag() {
+    public boolean hasFrag() {
         return check(FRAME_CTRL_POSITION_FRAG);
     }
 
-    static int getFrameCTRLValue(boolean encrypted, boolean checksum, int direction, boolean requireAck, boolean frag) {
+    public static int getFrameCTRLValue(boolean encrypted, boolean checksum, int direction, boolean requireAck, boolean frag) {
         int frame = 0;
         if (encrypted) {
             frame = frame | (1 << FRAME_CTRL_POSITION_ENCRYPTED);
