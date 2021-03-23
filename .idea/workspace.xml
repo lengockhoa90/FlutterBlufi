@@ -5,7 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4233614-2244-477f-9efb-facfedc95fc3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.dart_tool/package_config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/android/src/main/java/vn/vconnex/blufi_plugin/BlufiPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/ios/Classes/BlufiPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/ios/Classes/BlufiPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/lib/blufi_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/lib/blufi_plugin.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/blufi_plugin/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Classes/BlufiPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/BlufiPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/blufi_plugin.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blufi_plugin.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,6 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pHx5y2PqV1rboeNWxxNBAmyXQw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -50,25 +69,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1831" height="409" key="GridCell.Tab.0.bottom" timestamp="1615173614813">
+    <state x="1978" y="262" key="#xdebugger.evaluate" timestamp="1616054468520">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="409" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615173614813" />
-    <state width="1831" height="409" key="GridCell.Tab.0.center" timestamp="1615173614813">
+    <state x="1978" y="262" key="#xdebugger.evaluate/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1616054468520" />
+    <state width="1831" height="502" key="GridCell.Tab.0.bottom" timestamp="1616057778753">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="409" key="GridCell.Tab.0.center/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615173614813" />
-    <state width="1831" height="409" key="GridCell.Tab.0.left" timestamp="1615173614813">
+    <state width="1831" height="502" key="GridCell.Tab.0.bottom/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1616057778753" />
+    <state width="1831" height="502" key="GridCell.Tab.0.center" timestamp="1616057778752">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="409" key="GridCell.Tab.0.left/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615173614813" />
-    <state width="1831" height="409" key="GridCell.Tab.0.right" timestamp="1615173614813">
+    <state width="1831" height="502" key="GridCell.Tab.0.center/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1616057778752" />
+    <state width="1831" height="502" key="GridCell.Tab.0.left" timestamp="1616057778751">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state width="1831" height="409" key="GridCell.Tab.0.right/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615173614813" />
-    <state x="1909" y="306" width="865" height="490" key="find.popup" timestamp="1615169537233">
+    <state width="1831" height="502" key="GridCell.Tab.0.left/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1616057778751" />
+    <state width="1831" height="502" key="GridCell.Tab.0.right" timestamp="1616057778753">
       <screen x="1280" y="23" width="1873" height="1057" />
     </state>
-    <state x="1909" y="306" width="865" height="490" key="find.popup/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615169537233" />
+    <state width="1831" height="502" key="GridCell.Tab.0.right/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1616057778753" />
+    <state x="1909" y="306" width="865" height="490" key="find.popup" timestamp="1615888338150">
+      <screen x="1280" y="23" width="1873" height="1057" />
+    </state>
+    <state x="1909" y="306" width="865" height="490" key="find.popup/0.23.1280.777/1280.23.1873.1057@1280.23.1873.1057" timestamp="1615888338150" />
   </component>
 </project>

@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
@@ -88,11 +90,14 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
   /// when the Flutter Engine is detached from the Activity
   private MethodChannel channel;
 
+  private Handler handler;
+
 
 
   @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
+    handler = new Handler(Looper.getMainLooper());
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "blufi_plugin");
     channel.setMethodCallHandler(this);
     stateChannel = new EventChannel(flutterPluginBinding.getBinaryMessenger(), "blufi_plugin/state");
@@ -141,12 +146,11 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
       String deviceId = call.argument("peripheral");
       if (deviceId != null) {
         connectDevice(mDeviceMap.get(deviceId).getDevice());
-//        result.success(true);
+        result.success(true);
       }
       else {
-//        result.success(false);
+        result.success(false);
       }
-
     }
     else if (call.method.equals("requestCloseConnection")) {
       disconnectGatt();
@@ -192,6 +196,8 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     BluetoothLeScanner scanner = adapter.getBluetoothLeScanner();
     if (!adapter.isEnabled() || scanner == null) {
       result.success(false);
+
+      return;
     }
 
     mDeviceMap.clear();
@@ -202,19 +208,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     mLog.d("Start scan ble");
     scanner.startScan(null, new ScanSettings.Builder().setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY).build(),
             mScanCallback);
-//    mUpdateFuture = mThreadPool.submit(new Runnable() {
-//      @Override
-//      public void run() {
-//        while (!Thread.currentThread().isInterrupted()) {
-//          try {
-//            Thread.sleep(1000);
-//          } catch (InterruptedException e) {
-//            e.printStackTrace();
-//            break;
-//          }
-//        }
-//      }
-//    });
+    result.success(false);
   }
 
   private void stopScan() {
@@ -264,6 +258,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
 
   private void configure(String userName, String password) {
     BlufiConfigureParams params = new BlufiConfigureParams();
+    params.setOpMode(1);
     byte[] ssidBytes = (byte[]) userName.getBytes();
     params.setStaSSIDBytes(ssidBytes);
     params.setStaPassword(password);
@@ -347,6 +342,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     public void onMtuChanged(BluetoothGatt gatt, int mtu, int status) {
       mLog.d(String.format(Locale.ENGLISH, "onMtuChanged status=%d, mtu=%d", status, mtu));
       if (status == BluetoothGatt.GATT_SUCCESS) {
+        mBlufiClient.setPostPackageLengthLimit(20);
 //        updateMessage(makeJson("peripheral_disconnect","1"));
 //        updateMessage(String.format(Locale.ENGLISH, "Set mtu complete, mtu=%d ", mtu), false);
       } else {
@@ -509,6 +505,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     public void onReceiveCustomData(BlufiClient client, int status, byte[] data) {
       if (status == STATUS_SUCCESS) {
         String customStr = new String(data);
+          customStr = customStr.replace("\"","\\\"");
 //        updateMessage(String.format("Receive custom data:\n%s", customStr));
         updateMessage(makeJson("receive_device_custom_data",customStr));
       } else {
@@ -529,13 +526,23 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     Log.v("message", message);
 
     if (sink != null) {
-      sink.success(message);
+      handler.post(
+              new Runnable() {
+                @Override
+                public void run() {
+                  sink.success(message);
+                }
+              });
     }
   }
 
   private String makeJson(String command, String data) {
 
-    return String.format("{\"key\":\"%s\",\"value\":\"%s\"}", command, data);
+    String address = "";
+    if (mDevice != null) {
+      address = mDevice.getAddress();
+    }
+    return String.format("{\"key\":\"%s\",\"value\":\"%s\",\"address\":\"%s\"}", command, data, address);
   }
 
   private String makeScanDeviceJson(String address, String name) {
@@ -544,7 +551,11 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
   }
 
   private String makeWifiInfoJson(String ssid, int rssi) {
-    return String.format("{\"key\":\"wifi_info\",\"value\":{\"ssid\":\"%s\",\"rssi\":\"%s\"}}", ssid, rssi);
+    String address = "";
+    if (mDevice != null) {
+      address = mDevice.getAddress();
+    }
+    return String.format("{\"key\":\"wifi_info\",\"value\":{\"ssid\":\"%s\",\"rssi\":\"%s\",\"address\":\"%s\"}}", ssid, rssi, address);
   }
 
   @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -592,17 +603,13 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
 
   @Override
   public void onDetachedFromActivityForConfigChanges() {
-
   }
 
   @Override
   public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
-
   }
 
   @Override
   public void onDetachedFromActivity() {
-
   }
-
 }

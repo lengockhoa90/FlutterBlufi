@@ -86,11 +86,13 @@ class _MyAppState extends State<MyApp> {
              await BlufiPlugin.instance.requestCloseConnection();
             }, child: Text('Close Connect')),
             TextButton(onPressed: () async {
-             await BlufiPlugin.instance.configProvision(username: 'VCONNEX', password: '0913456789');
+             await BlufiPlugin.instance.configProvision(username: 'ABCXYZ', password: '0913456789');
             }, child: Text('Config Provision')),
 
             TextButton(onPressed: () async {
-              await BlufiPlugin.instance.postCustomData('abc xytz');
+              String command =
+                  '12345678';
+              await BlufiPlugin.instance.postCustomData(command);
             }, child: Text('Send Custom Data')),
 
             Text(contentJson ?? '')

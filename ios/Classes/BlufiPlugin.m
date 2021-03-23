@@ -236,6 +236,7 @@
 - (void)blufi:(BlufiClient *)client didReceiveCustomData:(NSData *)data status:(BlufiStatusCode)status {
     if (status == StatusSuccess) {
         NSString *customString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        customString = [customString stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""];
            [self updateMessage:[self makeJsonWithCommand:@"receive_device_custom_data" data:customString]];
     }
     else {
@@ -253,7 +254,12 @@
 }
 
 -(NSString *)makeJsonWithCommand:(NSString*)command data:(NSString *)data {
-    return [NSString stringWithFormat:@"{\"key\":\"%@\",\"value\":\"%@\"}",command, data];
+    NSString *address = @"";
+    if (self.device != nil) {
+        address = self.device.uuid.UUIDString;
+    }
+    
+    return [NSString stringWithFormat:@"{\"key\":\"%@\",\"value\":\"%@\",\"address\":\"%@\"}",command, data, address];
 }
 
 -(NSString *)makeScanDeviceJsonWithAddress:(NSString*)address name:(NSString *)name {
@@ -261,7 +267,11 @@
 }
 
 -(NSString *)makeWifiInfoJsonWithSsid:(NSString*)ssid rssi:(int)rssi {
-    return [NSString stringWithFormat:@"{\"key\":\"wifi_info\",\"value\":{\"ssid\":\"%@\",\"rssi\":\"%d\"}}",ssid, rssi];
+    NSString *address = @"";
+       if (self.device != nil) {
+           address = self.device.uuid.UUIDString;
+       }
+    return [NSString stringWithFormat:@"{\"key\":\"wifi_info\",\"value\":{\"ssid\":\"%@\",\"rssi\":\"%d\",\"address\":\"%@\"}}",ssid, rssi,address];
 }
 
 
@@ -275,6 +285,7 @@
              self.filterContent = filter;
         }
         [self scanDeviceInfo];
+        
     }
     else if ([@"stopScan" isEqualToString:call.method]) {
         [self stopScan];
