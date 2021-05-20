@@ -237,17 +237,20 @@ enum {
 }
 
 - (void)gattWrite:(NSData *)data {
-    [_writeCondition lock];
-    if (![self isConnected]) {
+    if (_peripheral != nil && _writeChar != nil) {
+        [_writeCondition lock];
+        if (![self isConnected]) {
+            [_writeCondition unlock];
+            return;
+        }
+        if (DBUG) {
+            NSLog(@"Blufi GattWrite Length: %lu,  %@", (unsigned long)data.length, data);
+        }
+        [_peripheral writeValue:data forCharacteristic:_writeChar type:CBCharacteristicWriteWithResponse];
+        [_writeCondition wait];
         [_writeCondition unlock];
-        return;
     }
-    if (DBUG) {
-        NSLog(@"Blufi GattWrite Length: %lu,  %@", (unsigned long)data.length, data);
-    }
-    [_peripheral writeValue:data forCharacteristic:_writeChar type:CBCharacteristicWriteWithResponse];
-    [_writeCondition wait];
-    [_writeCondition unlock];
+
     return;
 }
 

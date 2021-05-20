@@ -206,6 +206,12 @@
    
     if (status == StatusSuccess) {
         [self updateMessage:[self makeJsonWithCommand:@"device_status" data:@"1"]];
+        
+        if ([response isStaConnectWiFi]) {
+          [self updateMessage:[self makeJsonWithCommand:@"device_wifi_connect" data:@"1"]];
+        } else {
+                [self updateMessage:[self makeJsonWithCommand:@"device_wifi_connect" data:@"0"]];
+      }
     } else {
         [self updateMessage:[self makeJsonWithCommand:@"device_status" data:@"0"]];
     }

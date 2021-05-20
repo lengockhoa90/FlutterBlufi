@@ -435,7 +435,6 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
 //        updateMessage("Negotiate security failed， code=" + status);
         updateMessage(makeJson("negotiate_security","0"));
       }
-
     }
 
     @Override
@@ -446,7 +445,6 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
       } else {
         updateMessage(makeJson("configure_params","0"));
       }
-
     }
 
     @Override
@@ -454,6 +452,11 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
       if (status == STATUS_SUCCESS) {
         updateMessage(makeJson("device_status","1"));
 //        updateMessage(String.format("Receive device status response:\n%s"));
+        if (response.isStaConnectWifi()){
+          updateMessage(makeJson("device_wifi_connect","1"));
+        } else {
+          updateMessage(makeJson("device_wifi_connect","0"));
+        }
       } else {
         updateMessage(makeJson("device_status","0"));
 //        updateMessage("Device status response error, code=" + status);

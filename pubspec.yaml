@@ -1,6 +1,6 @@
 name: blufi_plugin
 description: EspBlufi plugin, use two library EspBlufiForiOS, EspBlufiForAndroid.
-version: 0.1.1
+version: 0.1.4
 homepage: https://github.com/lengockhoa90/FlutterBlufi
 repository: https://github.com/lengockhoa90/FlutterBlufi.git
 issue_tracker: https://github.com/lengockhoa90/FlutterBlufi/issues

@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: [
             TextButton(onPressed: () async {
-              await BlufiPlugin.instance.scanDeviceInfo(filterString: 'BLUFI');
+              await BlufiPlugin.instance.scanDeviceInfo(filterString: 'VCONNEX');
             }, child: Text('Scan')),
             TextButton(onPressed: () async {
              await BlufiPlugin.instance.stopScan();
