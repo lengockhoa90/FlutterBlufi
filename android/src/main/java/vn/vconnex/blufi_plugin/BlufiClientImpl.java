@@ -132,7 +132,7 @@ public class BlufiClientImpl implements BlufiParameter {
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            mGatt = mDevice.connectGatt(mContext, false, mInnerGattCallback, BluetoothDevice.TRANSPORT_LE);
+            mGatt = mDevice.connectGatt(mContext, true, mInnerGattCallback, BluetoothDevice.TRANSPORT_LE);
         } else {
             mGatt = mDevice.connectGatt(mContext, false, mInnerGattCallback);
         }
