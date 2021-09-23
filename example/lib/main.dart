@@ -37,6 +37,8 @@ class _MyAppState extends State<MyApp> {
 
             String address = peripheral['address'];
             String name = peripheral['name'];
+            int rssi = peripheral['rssi'];
+            print(rssi);
             scanResult[address] = name;
           }
         }

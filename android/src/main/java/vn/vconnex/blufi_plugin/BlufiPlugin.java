@@ -548,9 +548,9 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
     return String.format("{\"key\":\"%s\",\"value\":\"%s\",\"address\":\"%s\"}", command, data, address);
   }
 
-  private String makeScanDeviceJson(String address, String name) {
+  private String makeScanDeviceJson(String address, String name, int rssi) {
 
-    return String.format("{\"key\":\"ble_scan_result\",\"value\":{\"address\":\"%s\",\"name\":\"%s\"}}", address, name);
+    return String.format("{\"key\":\"ble_scan_result\",\"value\":{\"address\":\"%s\",\"name\":\"%s\",\"rssi\":\"%s\"}}", address, name,rssi);
   }
 
   private String makeWifiInfoJson(String ssid, int rssi) {
@@ -594,7 +594,7 @@ public class BlufiPlugin implements FlutterPlugin, ActivityAware, MethodCallHand
 
       if (scanResult.getDevice().getName() != null) {
         mDeviceMap.put(scanResult.getDevice().getAddress(), scanResult);
-        updateMessage(makeScanDeviceJson(scanResult.getDevice().getAddress(), scanResult.getDevice().getName()));
+        updateMessage(makeScanDeviceJson(scanResult.getDevice().getAddress(), scanResult.getDevice().getName(), scanResult.getRssi()));
       }
     }
   }

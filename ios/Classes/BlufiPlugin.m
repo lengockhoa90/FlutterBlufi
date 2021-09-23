@@ -51,7 +51,7 @@
         if (self.filterContent != nil && ![self.filterContent isEqualToString:@""] && ![device.name.lowercaseString containsString:self.filterContent.lowercaseString]) return;
         
         self.dataDictionary[device.uuid.UUIDString] = device;
-        [self updateMessage:[self makeScanDeviceJsonWithAddress:device.uuid.UUIDString name:device.name]];
+        [self updateMessage:[self makeScanDeviceJsonWithAddress:device.uuid.UUIDString name:device.name rssi:device.rssi]];
     }];
 }
 
@@ -268,8 +268,8 @@
     return [NSString stringWithFormat:@"{\"key\":\"%@\",\"value\":\"%@\",\"address\":\"%@\"}",command, data, address];
 }
 
--(NSString *)makeScanDeviceJsonWithAddress:(NSString*)address name:(NSString *)name {
-    return [NSString stringWithFormat:@"{\"key\":\"ble_scan_result\",\"value\":{\"address\":\"%@\",\"name\":\"%@\"}}",address, name];
+-(NSString *)makeScanDeviceJsonWithAddress:(NSString*)address name:(NSString *)name rssi: (int)rssi {
+    return [NSString stringWithFormat:@"{\"key\":\"ble_scan_result\",\"value\":{\"address\":\"%@\",\"name\":\"%@\",\"rssi\":\"%d\"}}",address, name,rssi];
 }
 
 -(NSString *)makeWifiInfoJsonWithSsid:(NSString*)ssid rssi:(int)rssi {
